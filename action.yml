@@ -1,6 +1,6 @@
 name: 'get-release-branch-version'
 description: 'Gets the version number of a release branch such as release/1.2.3'
-author: 'valadas'
+author: 'anyshpm'
 outputs:
   major:
     description: 'The major version number such as 1 in release/1.2.3'
