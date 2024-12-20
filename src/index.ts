@@ -7,6 +7,7 @@ const getVersion = async (version: RegExpMatchArray): Promise<Version> => {
         major: parseInt(version[1]),
         minor: parseInt(version[2]),
         patch: parseInt(version[3]),
+        version: version[0],
         manifestSafeVersionString:
             version[1].padStart(2, "0") + "." +
             version[2].padStart(2, "0") + "." +
@@ -29,6 +30,7 @@ async function run() {
             core.setOutput("major", version.major);
             core.setOutput("minor", version.minor);
             core.setOutput("patch", version.patch);
+            core.setOutput("version", version.version);
             core.setOutput("manifestSafeVersionString", version.manifestSafeVersionString);
         }
         else{
@@ -45,6 +47,7 @@ interface Version {
     major: number,
     minor: number,
     patch: number,
+    version: string,
     manifestSafeVersionString: string
 }
 

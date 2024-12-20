@@ -5,7 +5,6 @@ This action should only be run on release branches. Here is a suggested usage wi
 
 ```yaml
 name: Get release branch
-on: create
 
 jobs:
   get-release:
@@ -15,7 +14,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 1
-      - uses: valadas/get-release-branch-version@v1
+      - uses: anyshpm/get-release-branch-version@v1
         id: branchVersion
       - name: Dump the version info
         env:
