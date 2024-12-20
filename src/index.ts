@@ -18,10 +18,6 @@ async function run() {
     try {
         const event = github.context.eventName;
         const refType = github.context.payload.ref_type;
-        if (refType !== "branch"){
-            core.setFailed("This action is only meant to be run on the creation of a new branch");
-            return;
-        }
 
         // Grab the branch version
         const branchName: string = github.context.payload.ref;
